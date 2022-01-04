@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.awonsome.common.sms.config.SmsClient,\
+  com.awonsome.common.sms.service.SmsService

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.awesom.fund.mapper.FundMapper">
+
+    <insert id="insertOne" parameterType="com.awesom.fund.modle.Fund">
+        INSERT INTO fund (
+        fund_code,
+        fund_name,
+        fund_scale,
+        company_code,
+        fund_manager_code)
+
+        VALUES(
+        #{fundCode},
+        #{fundName},
+        #{fundScale},
+        #{companyCode},
+        #{fundManagerCode})
+    </insert>
+
+    <update id="updateOne" parameterType="com.awesom.fund.modle.Fund">
+        UPDATE fund
+        SET fund_manager_code=#{fundManagerCode}
+        WHERE fund_code=#{fundCode}
+    </update>
+
+</mapper>

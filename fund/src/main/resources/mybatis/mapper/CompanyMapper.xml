@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.awesom.fund.mapper.CompanyMapper">
+
+    <sql id="all_column">
+        company_code, company_name, established, fund_total, fund_manager_total, fund_scale, overall_rating
+    </sql>
+
+    <insert id="insertCompany" parameterType="com.awesom.fund.modle.Company">
+        INSERT INTO company (
+        company_code,
+        company_name,
+        established,
+        fund_total,
+        fund_manager_total,
+        fund_scale,
+        overall_rating)
+        VALUES(
+        #{companyCode},
+        #{companyName},
+        #{established},
+        #{fundTotal},
+        #{fundManagerTotal},
+        #{fundScale},
+        #{overallRating})
+    </insert>
+
+    <select id="findAllCompany" resultType="com.awesom.fund.modle.Company">
+        SELECT
+        id,
+        company_code,
+        company_name,
+        established,
+        fund_total,
+        fund_manager_total,
+        fund_scale,
+        overall_rating
+        FROM company
+    </select>
+
+</mapper>

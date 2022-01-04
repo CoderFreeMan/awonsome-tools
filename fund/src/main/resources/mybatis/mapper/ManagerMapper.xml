@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.awesom.fund.mapper.ManagerMapper">
+
+    <insert id="insertOneManager" parameterType="com.awesom.fund.modle.Manager">
+        INSERT INTO manager (
+            fund_manager_code,
+            fund_manager_name,
+            appointment_date,
+            appointment_days,
+            working_days,
+            manager_fund_num,
+            company_code)
+        VALUES(
+            #{fundManagerCode},
+            #{fundManagerName},
+            #{appointmentDate},
+            #{appointmentDays},
+            #{workingDays},
+            #{managerFundNum},
+            #{companyCode})
+    </insert>
+
+    <select id="selectAll" resultType="com.awesom.fund.modle.Manager">
+        SELECT * FROM manager
+    </select>
+
+</mapper>
